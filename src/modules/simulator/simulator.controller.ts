@@ -7,6 +7,15 @@ import {errorResponse} from "../../common/responses/error.response";
 import {validateSimulator} from "./validation/simulator.validation";
 
 export class SimulatorController {
+    /**
+     * get all simulators
+     *
+     * @static
+     * @param {object} req express request object
+     * @param {object} res express response object
+     * @param {object} next next middleware
+     * @returns {json} json object with status, simulators data
+     */
      static async getSimulators(req: Request, res: Response, next: NextFunction) {
          try {
              const simulators = await SimulatorService.getSimulators();
@@ -16,6 +25,15 @@ export class SimulatorController {
          }
      }
 
+    /**
+     * get a simulator
+     *
+     * @static
+     * @param {object} req express request object
+     * @param {object} res express response object
+     * @param {object} next next middleware
+     * @returns {json} json object with status, simulator data
+     */
      static async getSimulator(req: Request, res: Response, next: NextFunction) {
          const { profile_id } = req.params;
          if (!profile_id) return errorResponse({ res, statusCode: StatusCodes.BAD_REQUEST, message: "Invalid profile id" });
@@ -28,6 +46,15 @@ export class SimulatorController {
          }
      }
 
+    /**
+     * create a simulator
+     *
+     * @static
+     * @param {object} req express request object
+     * @param {object} res express response object
+     * @param {object} next next middleware
+     * @returns {json} json object with status, simulator data
+     */
      static async createSimulator(req: Request, res: Response, next: NextFunction) {
          const { error } = validateSimulator(req.body);
          if (error) return errorResponse({ res, statusCode: StatusCodes.BAD_REQUEST, message: error.details[0].message });
