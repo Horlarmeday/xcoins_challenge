@@ -1,8 +1,8 @@
-import express from "express";
-import error from "../../middleware/error";
-import routes from "./routes"
-import loaders from "./loaders";
-import "../database/database"
+import express from 'express';
+import error from '../../middleware/error';
+import routes from './routes';
+import loaders from './loaders';
+import '../database/database';
 
 const server: express.Application = express();
 

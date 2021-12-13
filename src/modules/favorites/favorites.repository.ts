@@ -1,4 +1,4 @@
-import { Favorite } from "../../models/Favorite";
+import { Favorite } from '../../models/Favorite';
 
 export const getFavorites = async () => await Favorite.find().lean();
 
