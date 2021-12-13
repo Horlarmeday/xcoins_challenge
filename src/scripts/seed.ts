@@ -1,13 +1,11 @@
-import mongoose from "mongoose";
-import _ from "lodash";
-import { Profile } from "../models/Profile";
-import { Simulator } from "../models/Simulator";
-import { Favorite } from "../models/Favorite";
-import { DBURL } from "../config";
+import mongoose from 'mongoose';
+import { Profile } from '../models/Profile';
+import { Simulator } from '../models/Simulator';
+import { Favorite } from '../models/Favorite';
+import { DBURL } from '../config';
 
 (async () => {
-
-  mongoose.connect(DBURL, {
+  await mongoose.connect(DBURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
@@ -21,7 +19,7 @@ import { DBURL } from "../config";
   });
   await profile.save();
 
-  const query = { _id: "6093abb3dfd9da1deeae56f2" };
+  const query = { _id: '6093abb3dfd9da1deeae56f2' };
   const idProfile = await Profile.findOne(query).then((e) => {
     return e?._id;
   });
@@ -47,5 +45,5 @@ import { DBURL } from "../config";
   });
   await favorite.save();
 
-  mongoose.disconnect();
+  await mongoose.disconnect();
 })();
