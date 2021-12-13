@@ -28,12 +28,30 @@
     "dev": "ts-node-dev src/api.ts",
     "seed": "ts-node-dev src/scripts/seed.ts",
     "start": "node dist/api.js",
-    "build": "tsc -b"
+    "build": "tsc -b",
+    "test": "set NODE_ENV=TEST&& jest --detectOpenHandles"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "verbose": true
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-typescript": "^7.16.0",
+    "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
+    "babel-jest": "^27.4.4",
     "eslint": "^7.25.0",
-    "eslint-plugin-react": "^7.23.2"
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.23.2",
+    "jest": "^27.4.4",
+    "prettier": "^2.5.1",
+    "supertest": "^6.1.6"
   }
 }
