@@ -1,11 +1,12 @@
-import { Router } from "express";
-import { SimulatorController } from "./simulator.controller";
+import { Router } from 'express';
+import { SimulatorController } from './simulator.controller';
 
 const router = Router();
 
-router.route('/:profile_id')
-    .get(SimulatorController.getSimulator)
-    .post(SimulatorController.createSimulator);
+router
+  .route('/:profile_id')
+  .get(SimulatorController.getSimulator)
+  .post(SimulatorController.createSimulator);
 
 router.get('/', SimulatorController.getSimulators);
 
