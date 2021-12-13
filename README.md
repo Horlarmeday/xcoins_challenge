@@ -98,7 +98,13 @@ It has its `controller`, `service`, `repository`, `interface` and its `routes`.
 ### Favorites Module
 The Favorites module contains everything about a user favorite crypto. The files in this module is also structured as the modules above.
 
-
+## Patterns
+-   Keeping Express `app` and `server` into seperate files. This is done because seperating
+API declaration and the network related configuration allows testing the API in-process without having to perform network calls, and faster testing execution
+-   Seperating app `loaders` and `routes` from the server startup file. I did this because having all the app loaders and routes in the server file
+would clutter the file and make it unreadable especially if the app has so many `dependencies` and `routes`
+- Creating functions for `error` and `success` responses, this helps keep the code DRY
+- Extending the Error class to use in the modules `services`
 
 ## Features
 The features of this project include the following.
