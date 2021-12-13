@@ -32,7 +32,7 @@ it affecting the business logic of the application.
 - [Structure](#structure)
 - [Features](#features)
 - [Usage](#usage)
-- [Documentation](#documentation)
+- [Pattern](#patterns)
 - [Test](#test)
 - [Meta](#meta)
 
